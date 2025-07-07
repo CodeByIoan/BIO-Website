@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <!--Embed stuff-->
+    <meta property="og:title" content="Hi! I'm Archon 😊">
+    <meta property="og:description" content="Just a BIO page made by yours truly, Archon. Find out more about me here. Find links to my socials, projects, Payment Links And Information about Commissions!">
+    <meta property="og:url" content="https://archonbio.xyz/">
+    <meta property="og:type" content="website">
+    
+    <!--Theme / colour etc.-->
+    <meta name="theme-color" content="#FFB6C1">
+  <title>Hi! I'm archon 😊</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="video-background">
+    <video autoplay loop muted playsinline id="background-video">
+      <source src="BackroundVideos/your-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="overlay-text" id="click-to-enter">CLICK TO ENTER</div>
+  </div>
+
+  <div class="content" id="main-content">
+    <div class="profile-container">
+      <div class="profile-picture"></div>
+      <h1>Archon</h1>
+    </div>
+    <div class="nav-tabs">
+      <a class="tab-link active" data-tab="links">Links</a>
+      <a class="tab-link" data-tab="projects">Projects</a>
+      <a class="tab-link" data-tab="payment-links">Payment Links</a>
+      <a class="tab-link" data-tab="Commissions">Commissions</a>
+    </div>
+    
+    <div class="bio-box" id="links">
+      <p>- Hey! I'm Archon. Hope you're having a great day. Welcome to my site! 🤝<br>
+        - 18, (📍 Wales, United Kingdom.)<br>
+        - Developer (See Projects / Commisions page)😊</p>
+    </div>
+
+    <div class="bio-box" id="projects" style="display: none;">
+      <p>Hey! This is where you will be able to find some of my projects. (github.com/CodeByIoan for more!) 🔥<br><br>As of right now there are 2 "projects" Listed here.<br><br>Project 1 - Archon.WTF (Currently not available.) Gaming services platform with 2,500+ digital products sold 🎉<br><br>Project 2 - Archonbio.xyz The site you are currently veiwing. Need I say more? 🔥</p>
+    </div>
+
+    <div class="bio-box" id="payment-links" style="display: none;">
+      <p>Hey there! This is where you will be able to find my updated crypto adresses. If you would like to discuss a different way of payment add my discord the button is below. Click on the respective button to copy the information to your clipboard! 😊🤝</p>
+    </div>
+
+    <div class="bio-box" id="Commissions" style="display: none;">
+        <p>Hey! Are you in need of a developer? 👋<br><br>I can help out. I can create / develop anything that you need! ️‍🔥<br><br>Advanced or even simple Discord bots? Websites? - Including E-Commerce websites with Billgang / Sellpass Integration. (I have ran successful stores myself! Check projects tab.) 🤑<br><br>Or even if its just something simple like the website your currently looking at. 😊<br><br>Yes. I do take custom requests. (I will NOT participate in / create anything that is illegal or can be used for malicious purpouses.) But just press the "Discord Username" Button below to contact me, Just let me know what you need and we can negotiate a price! 📧<br><br>Note : Currently not taking on large projects due to time constraints, But again I am always open to requests just shoot me a DM. 🤝</p>
+      </div>
+
+    <div class="button-container" id="links-buttons">
+      <a href="https://www.youtube.com/@example" target="_blank">YouTube 🎥</a>
+      <a href="https://discord.com/users/example" target="_blank">Discord 💬</a>
+      <a href="https://x.com/example" target="_blank">Twitter 🐦</a>
+      <a href="https://open.spotify.com/user/example" target="_blank">Spotify 🎵</a>
+    </div>
+
+    <div class="button-container" id="projects-buttons" style="display: none;">
+      <a href="https://archon.wtf/" target="_blank">archon.wtf</a>
+      <a href="https://archonbio.xyz/" target="_blank">archonbio.xyz</a>
+    </div>
+
+    <div class="button-container" id="payment-links-buttons" style="display: none;">
+      <a href="#" onclick="copyToClipboard('bc1qjkgcjj4nrr7p66shdwfrpw743cgcd4x9tfpau6')">Bitcoin</a>
+      <a href="#" onclick="copyToClipboard('0xE208311Ee3D33Ac41c6e1D437d056FA15373dAEd')">Ethereum</a>
+      <a href="#" onclick="copyToClipboard('Lb4W9h2pm7ZNw18Cuv6WgFVKNHqEUzq7WX')">Litecoin</a>
+      <a href="#" onclick="copyToClipboard('notarchon.')">Discord Username</a>
+    </div>
+
+    <div class="button-container" id="Commissions-buttons" style="display: none;">
+        <a href="#" onclick="copyToClipboard('notarchon.')">Discord Username</a>
+        <a href="https://t.me/archonwtf/" target="_blank">Telegram (Less Active)</a>
+      </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const overlayText = document.getElementById('click-to-enter');
+    const mainContent = document.getElementById('main-content');
+    const video = document.getElementById('background-video');
+    const tabs = document.querySelectorAll('.tab-link');
+    const bioBoxes = document.querySelectorAll('.bio-box');
+    const buttonContainers = document.querySelectorAll('.button-container');
+
+    video.addEventListener('loadedmetadata', () => {
+      video.currentTime = 7; 
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      overlayText.style.opacity = '0';
+      overlayText.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        mainContent.classList.add('active');
+        video.muted = false; 
+        video.volume = 0; 
+        video.play();
+
+        const fadeInInterval = setInterval(() => {
+          if (video.volume < 1) {
+            video.volume = Math.min(video.volume + 0.05, 1);
+          } else {
+            clearInterval(fadeInInterval);
+          }
+        }, 100); 
+      }, 500);
+    });
+
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active'); 
+
+        const selectedTab = tab.getAttribute('data-tab');
+        bioBoxes.forEach(box => {
+          if (box.id === selectedTab) {
+            box.style.display = 'block'; 
+          } else {
+            box.style.display = 'none'; 
+          }
+        });
+        buttonContainers.forEach(container => {
+          if (container.id === `${selectedTab}-buttons`) {
+            container.style.display = 'grid'; 
+          } else {
+            container.style.display = 'none'; 
+          }
+        });
+      });
+    });
+
+    document.querySelector('.tab-link[data-tab="links"]').click();
+
+    function copyToClipboard(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      alert(`${text} copied to clipboard!`);
+    }
+  </script>
+
+<script src="snow.js" defer></script>
+</body>
+</html>
